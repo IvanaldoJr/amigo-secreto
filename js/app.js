@@ -3,19 +3,23 @@ function adicionar() {
     let amigo  = document.getElementById('nome-amigo');
     if (amigo.value == '') {
         alert('Digite um nome válido');
-    } else if (amigos.includes(amigo.value)) {
-        alert('Nome já adicionado!');
-    } else {
-        let lista = document.getElementById('lista-amigos');
-
-        amigos.push(amigo.value);
-        if (lista.textContent == '') {
-            lista.textContent = amigo.value;
-        } else {
-            lista.textContent = lista.textContent + ', ' + amigo.value;
-        }
-        amigo.value = '';
+        return;
     }
+    let nomeMaisculo = amigo.value.toUpperCase(); // conversão para maisculo
+    if (amigos.includes(nomeMaisculo)) {
+        alert('Nome já adicionado!');
+        return;
+    }
+        let lista = document.getElementById('lista-amigos');
+        
+        amigos.push(nomeMaisculo);
+        if (lista.textContent == '') {
+            lista.textContent = nomeMaisculo;
+        } else {
+            lista.textContent = lista.textContent + ', ' + nomeMaisculo;
+        }
+        nomeMaisculo = '';
+    
     
 
 }
