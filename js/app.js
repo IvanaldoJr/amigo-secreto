@@ -3,6 +3,8 @@ function adicionar() {
     let amigo  = document.getElementById('nome-amigo');
     if (amigo.value == '') {
         alert('Digite um nome válido');
+    } else if (amigos.includes(amigo.value)) {
+        alert('Nome já adicionado!');
     } else {
         let lista = document.getElementById('lista-amigos');
 
